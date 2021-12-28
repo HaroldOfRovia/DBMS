@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <center>
+            <ListView fx:id="listPersons" prefHeight="370.0" prefWidth="225.0" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <VBox prefHeight="375.0" prefWidth="170.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="79.0" prefWidth="170.0">
+                     <children>
+                        <TextField fx:id="searchValue" prefHeight="25.0" prefWidth="125.0" promptText="Bobrova">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#search" text="Search">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#resetList" prefHeight="25.0" prefWidth="100.0" text="All persons" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="10.0" right="10.0" />
+                     </opaqueInsets>
+                  </VBox>
+                  <Separator prefWidth="200.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </Separator>
+                  <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Add person#">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Delete perosn#" />
+                     </children>
+                  </VBox>
+               </children></VBox>
+         </left>
+         <right>
+            <VBox prefHeight="370.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="55.0" prefWidth="220.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#changeOnTrue" prefHeight="55.0" prefWidth="90.0" style="-fx-background-radius: 0;" text="Information" />
+                        <Button mnemonicParsing="false" onAction="#changeOnFalse" prefHeight="55.0" prefWidth="90.0" style="-fx-background-radius: 0;" text="Old Phones" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="239.0" prefWidth="180.0">
+                     <children>
+                        <Text fx:id="curPersonText" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" underline="true" wrappingWidth="170.0" />
+                     </children>
+                  </VBox>
+                  <Separator prefWidth="200.0" />
+                  <VBox alignment="CENTER" prefHeight="80.0" prefWidth="180.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#addData" prefHeight="25.0" prefWidth="88.0" text="Add data">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin></Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Delete data#" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </right>
+         <top>
+            <HBox prefHeight="20.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="240.0" />
+                  <Button mnemonicParsing="false" onAction="#searchByName" prefHeight="25.0" prefWidth="180.0" style="-fx-background-radius: 0;" text="Search by name" />
+                  <Button mnemonicParsing="false" onAction="#searchByPhone" prefHeight="25.0" prefWidth="180.0" style="-fx-background-radius: 0;" text="Search by phone" />
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

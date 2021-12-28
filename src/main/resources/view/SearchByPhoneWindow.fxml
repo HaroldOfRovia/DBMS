@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="250.0" prefWidth="400.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter phone number" textAlignment="CENTER" wrappingWidth="221.13671875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="53.0" prefWidth="400.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="53.0" prefWidth="155.0">
+                     <children>
+                        <TextField fx:id="searchPhone" prefHeight="25.0" prefWidth="144.0" promptText="+79009875544" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="400.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="190.0">
+                     <children>
+                        <ChoiceBox fx:id="categoryList" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#search" text="Search" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

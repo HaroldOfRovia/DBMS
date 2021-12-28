@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="250.0" prefWidth="400.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter type and value" textAlignment="CENTER" wrappingWidth="221.13671875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="209.0" text="Both fields must be filled in" textFill="RED" />
+            <HBox alignment="BOTTOM_CENTER" prefHeight="53.0" prefWidth="400.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="53.0" prefWidth="155.0">
+                     <children>
+                        <TextField fx:id="type" prefHeight="25.0" prefWidth="144.0" promptText="Type" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="53.0" prefWidth="26.0" />
+                  <VBox alignment="CENTER" prefHeight="53.0" prefWidth="155.0">
+                     <children>
+                        <TextField fx:id="data" prefHeight="25.0" prefWidth="144.0" promptText="Value" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="32.0" prefWidth="400.0">
+               <children>
+                  <CheckBox fx:id="active" mnemonicParsing="false" prefHeight="17.0" prefWidth="63.0" text="Active" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#addData" text="Add" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
