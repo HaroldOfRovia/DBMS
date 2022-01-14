@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'edu.sc.seis.launch4j' version '2.5.1'
 }
 
 group 'org.example'
@@ -17,6 +18,11 @@ repositories {
 javafx {
     version = 13
     modules = ['javafx.controls', 'javafx.fxml']
+}
+
+launch4j {
+    mainClassName = 'person.Main'
+    outfile = 'PhoneBook.exe'
 }
 
 dependencies {

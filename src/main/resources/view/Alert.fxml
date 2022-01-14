@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="225.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AlertController">
+   <children>
+      <Text layoutX="168.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alert!" textAlignment="CENTER" wrappingWidth="63.13671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="alert" layoutX="25.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="349.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button layoutX="172.0" layoutY="173.0" mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="57.0" text="OK" />
+   </children>
+</AnchorPane>

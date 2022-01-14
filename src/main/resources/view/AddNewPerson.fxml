@@ -5,11 +5,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddNewDataController">
+<AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddNewPersonController">
    <children>
       <VBox alignment="CENTER" prefHeight="250.0" prefWidth="400.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter type and value" textAlignment="CENTER" wrappingWidth="221.13671875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter surname, name and type" textAlignment="CENTER" wrappingWidth="280.13671875">
                <font>
                   <Font size="20.0" />
                </font>
@@ -18,23 +18,23 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="53.0" prefWidth="155.0">
                      <children>
-                        <TextField fx:id="type" prefHeight="25.0" prefWidth="144.0" promptText="Type" />
+                        <TextField fx:id="surname" prefHeight="25.0" prefWidth="144.0" promptText="Surname" />
                      </children>
                   </VBox>
                   <VBox prefHeight="53.0" prefWidth="26.0" />
                   <VBox alignment="CENTER" prefHeight="53.0" prefWidth="155.0">
                      <children>
-                        <TextField fx:id="data" prefHeight="25.0" prefWidth="144.0" promptText="Value" />
+                        <TextField fx:id="name" prefHeight="25.0" prefWidth="144.0" promptText="Name" />
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <HBox alignment="TOP_CENTER" prefHeight="32.0" prefWidth="400.0">
+            <HBox alignment="TOP_CENTER" prefHeight="39.0" prefWidth="400.0">
                <children>
-                  <CheckBox fx:id="active" mnemonicParsing="false" prefHeight="17.0" prefWidth="63.0" text="Active" />
+                  <TextField fx:id="type" prefHeight="25.0" prefWidth="144.0" promptText="Type" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#addData" text="Add" />
+            <Button mnemonicParsing="false" onAction="#addPerson" text="Add" />
          </children>
       </VBox>
    </children>

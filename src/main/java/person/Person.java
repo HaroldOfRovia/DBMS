@@ -4,32 +4,28 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Person {
     private Integer personId;
     private StringProperty surname;
     private StringProperty name;
     private StringProperty typePerson;
-    private HashMap<String, String> info = new HashMap<String, String>();
-    private ArrayList<String> oldPhones = new ArrayList<String>();
+    private ArrayList<Data> data = new ArrayList<Data>();
 
     public Person(){
         personId = 0;
         setSurname("");
         setName("");
         setTypePerson("");
-        setInfo(new HashMap<String, String>());
-        setOldPhones(new ArrayList<>());
+        setData(new ArrayList<Data>());
     }
 
-    public Person(Integer personId, String surname, String name, String typePerson, HashMap<String, String> info, ArrayList<String> oldPhones){
+    public Person(Integer personId, String surname, String name, String typePerson, ArrayList<Data> data){
         this.personId = personId;
         setSurname(surname);
         setName(name);
         setTypePerson(typePerson);
-        setInfo(info);
-        setOldPhones(oldPhones);
+        setData(data);
     }
 
     public void setPersonId(Integer value){
@@ -78,38 +74,34 @@ public class Person {
         return typePersonStringProperty().get();
     }
 
-    public void setInfo(HashMap<String, String> values){
-        info.putAll(values);
+    public void setData(ArrayList<Data> data){
+        this.data.clear();
+        this.data.addAll(data);
     }
-    public HashMap<String, String> getInfo(){
-        return info;
-    }
-
-    public void setOldPhones(ArrayList<String> oldPhones){
-        this.oldPhones.addAll(oldPhones);
-    }
-    public ArrayList<String> getOldPhones() {
-        return oldPhones;
+    public ArrayList<Data> getData() {
+        return data;
     }
 
     public String toStringOldData(){
         StringBuilder str = new StringBuilder();
-        oldPhones.forEach((value) -> {
-            str.append(value + "\n");
+        data.forEach((value) -> {
+            if(!value.getActive())
+                str.append(value.toString()).append("\n");
         });
         return str.toString();
     }
 
-    public String dataToString(){
+    public String toStringActiveData(){
         StringBuilder str = new StringBuilder();
-        info.forEach((key, value) -> {
-            str.append(key + ": " + value + ";\n");
+        data.forEach(value -> {
+            if(value.getActive())
+                str.append(value.toString()).append("\n");
         });
         return str.toString();
     }
 
-    public String toStringData(){
-        return "type person: " + typePerson.getValue() + ";\n" + dataToString();
+    public String toStringPersonData(){
+        return "type person: " + typePerson.getValue() + ";\n" + toStringActiveData();
     }
 
     @Override
@@ -117,12 +109,16 @@ public class Person {
         return surname.getValue() + " " + name.getValue();
     }
 
-    public void addData(String key, String value){
-        info.put(key, value);
+    public void addData(String type, String value, String active){
+        Data data = new Data(type, value, active.equals("t"));
+        this.data.add(data);
     }
 
-    public void addOldPhone(String oldPhone){
-        oldPhones.add(oldPhone);
+    public void addData(Data data){
+        this.data.add(data);
     }
 
+    public void deleteData(Data curData) {
+        data.remove(curData);
+    }
 }

@@ -48,12 +48,12 @@
                   </Separator>
                   <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Add person#">
+                        <Button onAction="#addPerson" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Add person">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Delete perosn#" />
+                        <Button onAction="#deletePerson" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Delete perosn" />
                      </children>
                   </VBox>
                </children></VBox>
@@ -67,11 +67,17 @@
                         <Button mnemonicParsing="false" onAction="#changeOnFalse" prefHeight="55.0" prefWidth="90.0" style="-fx-background-radius: 0;" text="Old Phones" />
                      </children>
                   </HBox>
-                  <VBox alignment="CENTER" prefHeight="239.0" prefWidth="180.0">
-                     <children>
+                  <ScrollPane pannable="true" prefHeight="239.0" prefWidth="180.0">
+                     <content>
                         <Text fx:id="curPersonText" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" underline="true" wrappingWidth="170.0" />
-                     </children>
-                  </VBox>
+                     </content>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="5.0" top="20.0" />
+                     </padding>
+                  </ScrollPane>
                   <Separator prefWidth="200.0" />
                   <VBox alignment="CENTER" prefHeight="80.0" prefWidth="180.0">
                      <children>
@@ -79,7 +85,7 @@
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin></Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Delete data#" />
+                        <Button mnemonicParsing="false" onAction="#editData" prefHeight="25.0" prefWidth="88.0" text="Edit data" />
                      </children>
                   </VBox>
                </children>

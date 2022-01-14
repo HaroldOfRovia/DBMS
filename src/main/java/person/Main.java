@@ -14,8 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Phone book");
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/MainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainWindow.fxml"));
         Parent mainView = loader.load();
 
         MainWindowController mainController = loader.getController();
@@ -24,6 +23,7 @@ public class Main extends Application {
         mainController.setListPersons(people);
 
         Scene scene = new Scene(mainView);
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

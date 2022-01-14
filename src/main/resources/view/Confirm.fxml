@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="175.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ConfirmController">
+   <children>
+      <Button layoutX="100.0" layoutY="109.0" mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="51.0" text="OK" />
+      <Button layoutX="198.0" layoutY="109.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Text fx:id="warning" layoutX="10.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="329.13671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

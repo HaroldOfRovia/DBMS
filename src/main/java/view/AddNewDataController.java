@@ -1,13 +1,10 @@
 package view;
 
+import exceptions.AlertException;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddNewDataController {
     @FXML
@@ -16,27 +13,42 @@ public class AddNewDataController {
     private TextField data;
     @FXML
     private CheckBox active;
-    @FXML
-    private Label error;
     private Stage stage;
-
-    private final ArrayList<String> newData;
-
-
-    public AddNewDataController(ArrayList<String> newData){
-        this.newData = newData;
-    }
+    private boolean error = true;
 
     public void setDialogStage(Stage stage){
         this.stage = stage;
     }
 
-    public void addData(){
-        if (data.getText().equals("") || type.getText().equals(""))
-            error.opacityProperty().setValue(1);
-        else {
-            newData.addAll(List.of(data.getText(), type.getText(), String.valueOf(active.isSelected()).toUpperCase()));
-            stage.close();
+    public void addData() {
+        try {
+            if (data.getText().equals("") || type.getText().equals(""))
+                throw new AlertException("Both fields must be filled in.");
+            else if (!active.isSelected() && !type.getText().matches(".*(phone).*"))
+                throw new AlertException("Only phone numbers can be inactive.");
+            else if (type.getText().matches(".*(phone).*") && !data.getText().matches("^[\\d\\-+()]*$"))
+                throw new AlertException("Phone numbers can contain only (, ), +, - and digits.");
+            else {
+                error = false;
+                stage.close();
+            }
         }
+        catch (Exception ignored){}
+    }
+
+    public String getType(){
+        return type.getText();
+    }
+
+    public String getData(){
+        return data.getText();
+    }
+
+    public boolean getActive(){
+        return active.isSelected();
+    }
+
+    public boolean getError(){
+        return error;
     }
 }
