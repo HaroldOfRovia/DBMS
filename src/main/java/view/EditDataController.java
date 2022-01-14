@@ -50,7 +50,7 @@ public class EditDataController {
 
     public void save() {
         Data newData = new Data(typeDataField.getText(), dataField.getText(), checkActive.isSelected());
-        if(newData.equals(curData))
+        if(newData.equals(curData) || curData == null)
             return;
         ControlDatabase controlDatabase = new ControlDatabase();
         try{

@@ -135,9 +135,9 @@ public class ControlDatabase {
             else {
                 Statement statementPeople = connection.createStatement();
                 ResultSet rowPerson = statementPeople.executeQuery("select person.person_id " +
-                        "from person, type_of_person, info, type_of_info where (lower (person.name) ~ '" + text + "' or " +
-                        "lower (person.surname) ~ '" + text + "' or lower (type_of_person.brief) ~ '" + text + "' or " +
-                        "lower (info.value) ~ '" + text + "' or lower (type_of_info.brief) ~ '" + text + "') and " +
+                        "from person, type_of_person, info, type_of_info where (lower (person.name) ~ '" + text.toLowerCase() + "' or " +
+                        "lower (person.surname) ~ '" + text.toLowerCase() + "' or lower (type_of_person.brief) ~ '" + text.toLowerCase() + "' or " +
+                        "lower (info.value) ~ '" + text.toLowerCase() + "' or lower (type_of_info.brief) ~ '" + text.toLowerCase() + "') and " +
                         "person.type_of_person_id = type_of_person.type_of_person_id and info.type_of_info_id = type_of_info.type_of_info_id and info.person_id = person.person_id ");
                 return getPeople(people, rowPerson);
             }
