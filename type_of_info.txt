@@ -1,0 +1,19 @@
+-- public.type_of_info definition
+
+-- Drop table
+
+-- DROP TABLE public.type_of_info;
+
+CREATE TABLE public.type_of_info (
+	type_of_info_id int4 NOT NULL,
+	brief varchar NOT NULL,
+	CONSTRAINT type_of_info_pk PRIMARY KEY (type_of_info_id)
+);
+
+
+INSERT INTO public.type_of_info (type_of_info_id,brief) VALUES
+	 (1,'email'),
+	 (2,'adress'),
+	 (3,'phone'),
+	 (4,'work address'),
+	 (5,'second phone');

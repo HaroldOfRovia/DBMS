@@ -1,0 +1,25 @@
+-- public.person definition
+
+-- Drop table
+
+-- DROP TABLE public.person;
+
+CREATE TABLE public.person (
+	person_id int4 NOT NULL,
+	surname varchar NOT NULL,
+	"name" varchar NOT NULL,
+	type_of_person_id int4 NOT NULL,
+	CONSTRAINT person_pk PRIMARY KEY (person_id)
+);
+
+
+-- public.person foreign keys
+
+ALTER TABLE public.person ADD CONSTRAINT person_fk FOREIGN KEY (type_of_person_id) REFERENCES public.type_of_person(type_of_person_id);
+
+
+INSERT INTO public.person (person_id,surname,"name",type_of_person_id) VALUES
+	 (1,'Kudinkin','Ilya',1),
+	 (2,'Dubrovina','Anastasia',1),
+	 (12,'Pupkin','Ivan',3),
+	 (3,'Kiselev','Anatoliy',2);

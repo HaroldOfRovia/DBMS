@@ -1,0 +1,33 @@
+-- public.info definition
+
+-- Drop table
+
+-- DROP TABLE public.info;
+
+CREATE TABLE public.info (
+	info_id int4 NOT NULL,
+	person_id int4 NOT NULL,
+	type_of_info_id int4 NOT NULL,
+	value varchar NOT NULL,
+	active bool NOT NULL,
+	CONSTRAINT info_pk PRIMARY KEY (info_id)
+);
+CREATE INDEX info_person_id_idx ON public.info USING btree (person_id, type_of_info_id, active);
+
+
+-- public.info foreign keys
+
+ALTER TABLE public.info ADD CONSTRAINT info_fk FOREIGN KEY (person_id) REFERENCES public.person(person_id);
+ALTER TABLE public.info ADD CONSTRAINT info_fk_1 FOREIGN KEY (type_of_info_id) REFERENCES public.type_of_info(type_of_info_id);
+
+
+INSERT INTO public.info (info_id,person_id,type_of_info_id,value,active) VALUES
+	 (5,2,4,'Leningradskiy pr. 45',true),
+	 (6,12,5,'+71234231212',true),
+	 (4,2,5,'+79159993344',false),
+	 (7,1,3,'+8182',false),
+	 (10,1,3,'123746',true),
+	 (3,1,5,'+79109680317',true),
+	 (8,1,3,'+31414',false),
+	 (2,1,2,'Babicha 4k2',true),
+	 (1,1,1,'kudincikin@gmail.com',true);
